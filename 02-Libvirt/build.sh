@@ -12,7 +12,7 @@ FAILED="NO"
 
 #Install extra packages required by LibVirt
 #It is assumed that you have built and installed Qemu first.
-sudo apt install ament-cmake-xmllint xsltproc libxml2-dev libyajl-dev
+sudo apt install ament-cmake-xmllint xsltproc libxml2-dev libyajl-dev -y
 
 #### NOTES ###
 # After this Build, the *.pc files found by "find / -name libvirt.pc -print", 
@@ -104,7 +104,6 @@ cd ..
 
 if [[ "$FAILED" == "NO" ]]; then
 
-
     #If install has succeded, then these files must be present.
     if [[ -f /usr/lib64/pkgconfig/libvirt.pc ]]; then
         echo "Fixing location of *.pc files... SUDO needed."
@@ -170,6 +169,15 @@ if [[ "$FAILED" == "NO" ]]; then
           swtpm
     fi
 fi
+
+sudo systemctl enable virtstoraged
+sudo systemctl enable virtlockd
+sudo systemctl enable virtlogd
+sudo systemctl enable virtqemud
+sudo systemctl enable libvirtd
+
+
+echo "BEST TO REBOOT to start services..."
 
 exit 0
 
