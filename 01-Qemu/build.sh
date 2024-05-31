@@ -15,6 +15,7 @@ sudo apt install -y \
 
 #BUILD Dependencies
 sudo apt install -y \
+    meson \
     bison \
     curl \
     libcurl4-openssl-dev \

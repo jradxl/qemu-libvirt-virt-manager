@@ -20,6 +20,7 @@ sudo apt install -y \
  gir1.2-gtk-vnc-2.0 \
  gir1.2-spiceclientglib-2.0 \
  gir1.2-vte-2.91 \
+ python3-setuptools \
  python3-libxml2 \
  python3-requests
 
@@ -54,7 +55,7 @@ fi
 
 if [[ $FAILED = "NO" ]]; then
     echo "Building...."
-    ./setup.py build
+    ./setup.py build > ../VirtManager-build-log.txt
     if [[ "$?" = 0 ]]; then
         echo "Build suceeded."
      else
@@ -65,7 +66,7 @@ fi
 
 if [[ $FAILED = "NO" ]]; then
     echo "Running tests..."
-    python3 -m pytest > ../test-log.txt
+    python3 -m pytest > ../VirtManager-test-log.txt
     if [[ "$?" = 0 ]]; then
         echo "Tests sucessful."
     else
@@ -77,7 +78,7 @@ fi
 
 if [[ $FAILED = "NO" ]]; then
     echo "Installing... SUDO Needed."
-    sudo ./setup.py install
+    sudo ./setup.py install > ../VirtManager-install-log.txt
     if [[ "$?" = 0 ]]; then
         echo "Install Suceeded."
     else
