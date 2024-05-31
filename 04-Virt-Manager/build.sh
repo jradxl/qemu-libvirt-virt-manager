@@ -34,7 +34,7 @@ if [[ ! -d "$BUILD_DIR" ]]; then
 
     if [[ -f $FILE ]]; then
         echo "Unpacking $FILE..."
-        tar xJf $FILE
+        tar xf $FILE
     fi
 fi
 
