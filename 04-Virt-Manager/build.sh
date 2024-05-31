@@ -21,11 +21,14 @@ sudo apt install -y \
  gir1.2-spiceclientglib-2.0 \
  gir1.2-vte-2.91 \
  python3-setuptools \
+ python3-pytest \
  python3-libxml2 \
  python3-requests
 
 ##python3 -m pip install ipaddress
 sudo python3 -m pip install libvirt-python
+
+exit 0
 
 if [[ ! -f $FILE ]]; then
     echo "Downloading $FILE ..."
