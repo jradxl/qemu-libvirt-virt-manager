@@ -23,7 +23,8 @@ sudo apt install -y \
  python3-libxml2 \
  python3-requests
 
-python3 -m pip install ipaddress
+##python3 -m pip install ipaddress
+sudo python3 -m pip install libvirt-python
 
 if [[ ! -f $FILE ]]; then
     echo "Downloading $FILE ..."

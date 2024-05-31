@@ -27,8 +27,8 @@ sudo apt install -y \
 
 #This will install latest version from PYPI and
 # that should match the version downloaded above. Check!
-python3 -m pip install libvirt-python
-python3 -m pip install PyGObject
+####python3 -m pip install libvirt-python
+####python3 -m pip install PyGObject
 
 if [[ ! -f $FILE ]]; then
     echo "Downloading $FILE ..."
