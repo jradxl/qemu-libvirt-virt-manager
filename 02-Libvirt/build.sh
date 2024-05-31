@@ -12,7 +12,7 @@ FAILED="NO"
 
 #Install extra packages required by LibVirt
 #It is assumed that you have built and installed Qemu first.
-sudo apt install ament-cmake-xmllint xsltproc libxml2-dev libyajl-dev
+sudo apt install ament-cmake-xmllint xsltproc libxml2-dev libyajl-dev -y
 
 #### NOTES ###
 # After this Build, the *.pc files found by "find / -name libvirt.pc -print", 
