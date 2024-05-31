@@ -104,7 +104,6 @@ cd ..
 
 if [[ "$FAILED" == "NO" ]]; then
 
-
     #If install has succeded, then these files must be present.
     if [[ -f /usr/lib64/pkgconfig/libvirt.pc ]]; then
         echo "Fixing location of *.pc files... SUDO needed."
@@ -170,6 +169,15 @@ if [[ "$FAILED" == "NO" ]]; then
           swtpm
     fi
 fi
+
+sudo systemctl enable virtstoraged
+sudo systemctl enable virtlockd
+sudo systemctl enable virtlogd
+sudo systemctl enable virtqemud
+sudo systemctl enable libvirtd
+
+
+echo "BEST TO REBOOT to start services..."
 
 exit 0
 
