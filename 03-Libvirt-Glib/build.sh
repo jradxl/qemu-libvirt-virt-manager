@@ -7,11 +7,13 @@ BUILD_DIR=libvirt-glib-$VERSION
 FILE=$BUILD_DIR.tar.xz
 URL_BASE="https://download.libvirt.org/glib"
 URL="$URL_BASE/$FILE"
+FAILED="NO"
 
 echo "VERSION: $VERSION"
 echo "BUILD_DIR: $BUILD_DIR"
 echo "FILE: $FILE"
 echo "URL: $URL"
+echo ""
 
 sudo apt install -y \
   meson \
@@ -27,7 +29,6 @@ sudo apt install -y \
 # that should match the version downloaded above. Check!
 python3 -m pip install libvirt-python
 python3 -m pip install PyGObject
-
 
 if [[ ! -f $FILE ]]; then
     echo "Downloading $FILE ..."
@@ -51,7 +52,6 @@ if [[ -d "mybuild" ]]; then
     rm -rf mybuild
 fi
 echo "Configuring ..." 
-
 meson setup mybuild --prefix=/usr --buildtype=plain
 if [[ "$?" = 0 ]]; then
     echo "Configuring suceeded. Now compiling..."
