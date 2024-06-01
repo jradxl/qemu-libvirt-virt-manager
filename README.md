@@ -21,4 +21,7 @@ and it appears to work if Libvirt-Python is install as root, (sudo pip install l
 04-Libvirt_Glib, build.sh will build libvirt-glib-5.0.0 and install into /usr
 This is needed for Virt-Manager
 
+## Virt-Viewer
+05-Virt-Viewer, build.sh will build Virt-Viewer v11.0 and install into /usr
+
 
